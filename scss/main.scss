@@ -1,0 +1,103 @@
+@import 'global';
+
+.logo{
+    width: 100px;
+    height: 50px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    border-top: 30px solid rgb(52, 53, 51);
+    width:100%;
+}
+
+.wrapper{
+    background-color: #fff;
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+
+// Ejemplo de Nesting
+
+nav{
+    @include caja-flex(space-between, center, nowrap);
+    padding: 10px;
+
+    ul{
+        display:flex;
+        padding:0;
+
+        a{
+            padding: 10px;
+            font-size: 1.6rem;
+            font-weight:bold;
+        }
+
+        a:hover{
+            color:#6495ED;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.presentacion{
+    min-height: 600px;
+    max-width: 600px;
+    padding-top: 200px;
+    padding-bottom:50px;
+    @include caja-flex(space-between, center, wrap);
+
+    .flex-item1{
+        div{
+            justify-content: center;
+        }
+    }
+
+    .flex-item2{
+        text-align:center;
+        img{
+            width: 100%;
+            max-width: 600px;
+            min-width: 300px;
+        }
+    }
+
+    h1{
+        margin-top:0;
+        padding-right: 20px;
+        font-size: $font-h1;
+    }
+
+    p{
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+.servicios{
+    div{
+        text-align: center;
+    }
+
+    .tipo-servicios{
+        @include caja-flex(center, center, nowrap);
+        i{
+            font-size: 30px;
+            color: #6495ED;
+        }
+    }
+}
+
+footer{
+    min-height: 80px;
+    background-color: rgb(52, 53, 51);
+    margin-top: 0;
+    .footer-content{
+        text-align:center;
+        padding-top:30px;
+        padding-bottom:30px;
+    }
+}
+
+@import 'medios';
